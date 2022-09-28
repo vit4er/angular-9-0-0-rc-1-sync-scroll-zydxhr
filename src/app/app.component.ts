@@ -21,7 +21,15 @@ export class AppComponent  {
       this.scrollTwo.nativeElement.scrollTop = event.target.scrollTop;
     }
   }
-
+  
+  updateHorizontalScroll(event): void {
+    if (this.currentElement === 'scrollTwo') {
+      this.scrollOne.nativeElement.scrollLeft = event.target.scrollLeft;
+    } else if (this.currentElement === 'scrollOne') {
+      this.scrollTwo.nativeElement.scrollLeft = event.target.scrollLeft;
+    }
+  }
+  
   updateCurrentElement(element: 'scrollOne' | 'scrollTwo') {
     this.currentElement = element;
   }
